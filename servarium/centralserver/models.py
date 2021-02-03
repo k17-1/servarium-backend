@@ -7,18 +7,16 @@ from django.db import models
 class User(models.Model):
     """Пользователь"""
 
+    name = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    email = models.EmailField()
+    avatar = models.ImageField()
+    karma = models.IntegerField(default=0)
+    land = models.CharField(max_length=3, )
+    date_of_registration = models.DateField()
 
-name = models.CharField(max_length=100)
-password = models.CharField(max_length=100)
-email = models.EmailField()
-avatar = models.ImageField()
-karma = models.IntegerField(default=0)
-land = models.CharField(max_length=3, )
-date_of_registration = models.DateField()
-
-
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
 
 
 class Meta:
