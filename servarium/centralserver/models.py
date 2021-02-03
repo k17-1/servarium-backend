@@ -19,8 +19,8 @@ class User(models.Model):
         return self.name
 
 
-class Meta:
-    verbose_name_plural = "Пользователь"
+    class Meta:
+        verbose_name_plural = "Пользователь"
 
 
 class Community(models.Model):
